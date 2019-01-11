@@ -96,6 +96,7 @@
 			}
 
 		</style>
+		<script src="https://www.w3schools.com/lib/w3.js"></script>
 		<script>
 			// getUserMedia only works over https in Chrome 47+, so we redirect to https. Also notify user if running from file.
 			if (window.location.protocol == "file:") {
@@ -146,6 +147,15 @@
 			<div id="controls">
 				<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
 			</div>
+			<button onclick="getAdvice()">Get Advice Based on Your Feelings</button>>
+			<script>
+				function getAdvice() {
+					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
+					advice=data.slip.advice
+					alert(advice)
+					});
+				}
+</script>
 			<script>
 				var vid = document.getElementById('videoel');
 				var vid_width = vid.width;
