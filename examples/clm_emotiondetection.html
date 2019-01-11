@@ -147,7 +147,7 @@
 			<div id="controls">
 				<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
 			</div>
-			<button onclick="getAdvice()">Get Advice Based on Your Feelings</button>>
+			<button onclick="getAdvice()">Get Advice Based on Your Feelings</button>
 			<script>
 				function getAdvice() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
@@ -155,7 +155,7 @@
 					alert(advice)
 					});
 				}
-</script>
+			</script>
 			<script>
 				var vid = document.getElementById('videoel');
 				var vid_width = vid.width;
