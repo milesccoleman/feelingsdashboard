@@ -113,6 +113,7 @@
 .card__face--front {
   background: red;
   font-size: 40px;
+  border-radius: 15px; 
 
 }
 
@@ -120,6 +121,7 @@
   background: blue;
   transform: rotateY(180deg);
   font-size: 12px;
+  border-radius: 15px; 
 }
 #advice, #advice2, #advice3, #advice4, #advice5, #advice6 {
 width: 100px; 
@@ -470,6 +472,7 @@ visibility : hidden;
 					text(function(datum) { return datum.emotion;}).
 					attr("transform", "translate(0, 18)").
 					attr("class", "yAxis");
+					console.log(emotionData);
 				function updateData(data) {
 					// update
 					var rects = svg.selectAll("rect")
