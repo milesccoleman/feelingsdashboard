@@ -472,7 +472,8 @@ visibility : hidden;
 					text(function(datum) { return datum.emotion;}).
 					attr("transform", "translate(0, 18)").
 					attr("class", "yAxis");
-					console.log("emotion data is:" + emotionData);
+					return emotionData; 
+					console.log(emotionData);
 				function updateData(data) {
 					// update
 					var rects = svg.selectAll("rect")
