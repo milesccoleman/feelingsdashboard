@@ -38,7 +38,7 @@
 				margin-top : 50px;
 				margin-left : auto;
 				margin-right : auto;
-				max-width: 80%;
+				max-width: 90%;
 			}
 			h2 {
 				font-weight : 400;
@@ -92,6 +92,7 @@
   transform-style: preserve-3d;
   transform-origin: center right;
   transition: transform 1s;
+  border-radius: 15px; 
 }
 
 .card.is-flipped {
@@ -120,7 +121,7 @@
   transform: rotateY(180deg);
   font-size: 12px;
 }
-#advice {
+#advice, #advice2, #advice3, #advice4, #advice5, #advice6 {
 width: 100px; 
 height: 260px; 
 line-height: 12px;
@@ -134,8 +135,45 @@ ul {
 li {
   display: inline;
   float: left;
-  margin-left: 10px; 
+  margin-left: 2px; 
 }
+#angry {
+background: red; 
+font-size: 40px;
+visibility : hidden;
+
+}
+#sad {
+background: purple; 
+font-size: 40px;
+visibility : hidden;
+
+}
+#surprised {
+background: orange; 
+font-size: 40px;
+visibility : hidden;
+
+}
+#disgusted {
+background: brown; 
+font-size: 40px;
+visibility : hidden;
+
+}
+#happy {
+background: lightblue; 
+font-size: 40px;
+visibility : hidden;
+
+}
+#fearful {
+background: yellow; 
+font-size: 40px;
+visibility : hidden;
+
+}
+
 
 		</style>
 		<script src="https://www.w3schools.com/lib/w3.js"></script>
@@ -186,13 +224,12 @@ li {
 			<div id="controls">
 				<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
 			</div>
-			<button onclick="getAdvice()">Get Advice Based on Your Feelings</button>
-			<span>
+			<button onclick="showCards()">Get Advice Based on Your Feelings</button>
 			<ul id="tarot">
 			<li>
 			<div class="scene">
   			<div id="angry" class="card">
-    			<div class="card__face card__face--front">Anger</div>
+    			<div class="card__face">Anger</div>
    				<div class="card__face card__face--back"><p id="advice"></p></div>
   			</div>
 			</div>
@@ -200,48 +237,99 @@ li {
 			<li>
 			<div class="scene">
   			<div id="sad" class="card">
-    			<div class="card__face card__face--front">Sadness</div>
-   				<div class="card__face card__face--back"><p id="advice"></p></div>
+    			<div class="card__face">Sadness</div>
+   				<div class="card__face card__face--back"><p id="advice2"></p></div>
   			</div>
 			</div>
 			</li>
 			<li>
 			<div class="scene">
-  			<div id="surpised" class="card">
-    			<div class="card__face card__face--front">Surprise</div>
-   				<div class="card__face card__face--back"><p id="advice"></p></div>
+  			<div id="surprised" class="card">
+    			<div class="card__face">Surprise</div>
+   				<div class="card__face card__face--back"><p id="advice3"></p></div>
   			</div>
 			</div>
 			</li>
 			<li>
 			<div class="scene">
   			<div id="disgusted" class="card">
-    			<div class="card__face card__face--front">Disgust</div>
-   				<div class="card__face card__face--back"><p id="advice"></p></div>
+    			<div class="card__face">Disgust</div>
+   				<div class="card__face card__face--back"><p id="advice4"></p></div>
+  			</div>
+			</div>
+			</li>
+			<li>
+			<div class="scene">
+  			<div id="happy" class="card">
+    			<div class="card__face">Happiness</div>
+   				<div class="card__face card__face--back"><p id="advice5"></p></div>
   			</div>
 			</div>
 			</li>
 			<li>
 			<div class="scene">
   			<div id="fearful" class="card">
-    			<div class="card__face card__face--front">Fear</div>
-   				<div class="card__face card__face--back"><p id="advice"></p></div>
+    			<div class="card__face">Fear</div>
+   				<div class="card__face card__face--back"><p id="advice6"></p></div>
   			</div>
 			</div>
 			</li>
 			</ul>
 			<script>
-			var card = document.querySelector('.card');
-			card.addEventListener( 'click', function() {
-  			card.classList.toggle('is-flipped');
+			var card1 = document.querySelector('#angry');
+			card1.addEventListener( 'click', function() {
+  			card1.classList.toggle('is-flipped');
   			getAdvice(); 
 			});
+			var card2 = document.querySelector('#sad');
+			card2.addEventListener( 'click', function() {
+  			card2.classList.toggle('is-flipped');
+  			getAdvice(); 
+			});
+			var card3 = document.querySelector('#surprised');
+			card3.addEventListener( 'click', function() {
+  			card3.classList.toggle('is-flipped');
+  			getAdvice(); 
+			});
+			var card4 = document.querySelector('#disgusted');
+			card4.addEventListener( 'click', function() {
+  			card4.classList.toggle('is-flipped');
+  			getAdvice(); 
+			});
+			var card5 = document.querySelector('#happy');
+			card5.addEventListener( 'click', function() {
+  			card5.classList.toggle('is-flipped');
+  			getAdvice(); 
+			});
+			var card6 = document.querySelector('#fearful');
+			card6.addEventListener( 'click', function() {
+  			card6.classList.toggle('is-flipped');
+  			getAdvice(); 
+			});
+			
 				function getAdvice() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
 					advice = data.slip.advice
 					//alert(advice)
 					document.getElementById('advice').innerHTML = advice;
+					document.getElementById('advice2').innerHTML = advice;
+					document.getElementById('advice3').innerHTML = advice;
+					document.getElementById('advice4').innerHTML = advice;
+					document.getElementById('advice5').innerHTML = advice;
+					document.getElementById('advice6').innerHTML = advice;
 					});
+				}
+			</script>
+			<script>
+				function showCards() {
+				document.getElementById('angry').style.visibility = 'visible';
+				document.getElementById('sad').style.visibility = 'visible';
+				document.getElementById('surprised').style.visibility = 'visible';
+				document.getElementById('disgusted').style.visibility = 'visible';
+				document.getElementById('happy').style.visibility = 'visible';
+				document.getElementById('fearful').style.visibility = 'visible';
+				
+
 				}
 			</script>
 			<script>
