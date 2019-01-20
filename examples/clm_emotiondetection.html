@@ -120,7 +120,7 @@
 }
 
 .card__face--back {
-  background: blue;
+  background: rgba(0, 0, 0, 0.6); 
   transform: rotateY(180deg);
   font-size: 12px;
   border-radius: 15px; 
@@ -288,27 +288,27 @@ visibility : hidden;
 			var card2 = document.querySelector('#sad');
 			card2.addEventListener( 'click', function() {
   			card2.classList.toggle('is-flipped');
-  			getAdvice(); 
+  			getAdvice2(); 
 			});
 			var card3 = document.querySelector('#surprised');
 			card3.addEventListener( 'click', function() {
   			card3.classList.toggle('is-flipped');
-  			getAdvice(); 
+  			getAdvice3(); 
 			});
 			var card4 = document.querySelector('#disgusted');
 			card4.addEventListener( 'click', function() {
   			card4.classList.toggle('is-flipped');
-  			getAdvice(); 
+  			getAdvice4(); 
 			});
 			var card5 = document.querySelector('#happy');
 			card5.addEventListener( 'click', function() {
   			card5.classList.toggle('is-flipped');
-  			getAdvice(); 
+  			getAdvice5(); 
 			});
 			var card6 = document.querySelector('#fearful');
 			card6.addEventListener( 'click', function() {
   			card6.classList.toggle('is-flipped');
-  			getAdvice(); 
+  			getAdvice6(); 
 			});
 			
 				function getAdvice() {
@@ -316,10 +316,36 @@ visibility : hidden;
 					advice = data.slip.advice
 					//alert(advice)
 					document.getElementById('advice').innerHTML = advice;
+					});
+				}
+				function getAdvice2() {
+					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
+					advice = data.slip.advice
+					//alert(advice)
 					document.getElementById('advice2').innerHTML = advice;
+					});
+				}function getAdvice3() {
+					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
+					advice = data.slip.advice
+					//alert(advice)
 					document.getElementById('advice3').innerHTML = advice;
+					});
+				}function getAdvice4() {
+					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
+					advice = data.slip.advice
+					//alert(advice)
 					document.getElementById('advice4').innerHTML = advice;
+					});
+				}function getAdvice5() {
+					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
+					advice = data.slip.advice
+					//alert(advice)
 					document.getElementById('advice5').innerHTML = advice;
+					});
+				}function getAdvice6() {
+					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
+					advice = data.slip.advice
+					//alert(advice)
 					document.getElementById('advice6').innerHTML = advice;
 					});
 				}
