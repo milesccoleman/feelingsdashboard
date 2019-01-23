@@ -440,7 +440,7 @@ visibility : hidden;
 					if (ctrack.getCurrentPosition()) {
 						ctrack.draw(overlay);
 					}
-					const emotionOutput = [], 
+					var emotionOutput = [], 
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
 					emotionOutput = er; 
