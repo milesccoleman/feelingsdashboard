@@ -351,18 +351,7 @@ visibility : hidden;
 				}
 			</script>
 			<script>
-				function showCards() {
-				document.getElementById('angry').style.visibility = 'visible';
-				document.getElementById('sad').style.visibility = 'visible';
-				document.getElementById('surprised').style.visibility = 'visible';
-				document.getElementById('disgusted').style.visibility = 'visible';
-				document.getElementById('happy').style.visibility = 'visible';
-				document.getElementById('fearful').style.visibility = 'visible';
-				
-
-				}
-			</script>
-			<script>
+				const emotionData = []; 
 				var vid = document.getElementById('videoel');
 				var vid_width = vid.width;
 				var vid_height = vid.height;
@@ -441,6 +430,7 @@ visibility : hidden;
 					}
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
+					emotionData = er; 
 					if (er) {
 						updateData(er);
 						for (var i = 0;i < er.length;i++) {
@@ -526,6 +516,17 @@ visibility : hidden;
 				document.addEventListener('clmtrackrIteration', function(event) {
 					stats.update();
 				}, false);
+			</script>
+					<script>
+				function showCards() {
+				document.getElementById('angry').style.visibility = 'visible';
+				document.getElementById('sad').style.visibility = 'visible';
+				document.getElementById('surprised').style.visibility = 'visible';
+				document.getElementById('disgusted').style.visibility = 'visible';
+				document.getElementById('happy').style.visibility = 'visible';
+				document.getElementById('fearful').style.visibility = 'visible';
+				document.getElementById("output").innerHTML = emotionData; 
+				}
 			</script>
 		</div>
 	</body>
