@@ -228,6 +228,7 @@ visibility : hidden;
 			<div id="controls">
 				<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
 			</div>
+			<p id="output"> </p>
 			<button onclick="showCards()">Get Advice Based on Your Feelings</button>
 			<ul id="tarot">
 			<li>
@@ -450,6 +451,7 @@ visibility : hidden;
 								document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
 						}
+					document.getElementById("output").innerHTML = er;
 					}
 				}
 				var ec = new emotionClassifier();
