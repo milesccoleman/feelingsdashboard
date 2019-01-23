@@ -182,7 +182,6 @@ visibility : hidden;
 		</style>
 		<script src="https://www.w3schools.com/lib/w3.js"></script>
 		<script>
-			const emotionOutput = [], 
 			// getUserMedia only works over https in Chrome 47+, so we redirect to https. Also notify user if running from file.
 			if (window.location.protocol == "file:") {
 				alert("You seem to be running this example directly from a file. Note that these examples only work when served from a server or localhost due to canvas cross-domain restrictions.");
@@ -229,7 +228,7 @@ visibility : hidden;
 			<div id="controls">
 				<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
 			</div>
-			<p id="output"> </p>
+			<p id="output"></p>
 			<button onclick="showCards()">Get Advice Based on Your Feelings</button>
 			<ul id="tarot">
 			<li>
@@ -443,8 +442,7 @@ visibility : hidden;
 					}
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
-					this.emotionOutput = er; 
-					document.getElementById("output").innerHTML = this.emotionOutput;
+					document.getElementById("output").innerHTML = er;
 					if (er) {
 						updateData(er);
 						for (var i = 0;i < er.length;i++) {
