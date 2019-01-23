@@ -442,12 +442,12 @@ visibility : hidden;
 					}
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
-					document.getElementById("output").innerHTML = er;
 					if (er) {
 						updateData(er);
 						for (var i = 0;i < er.length;i++) {
 							if (er[i].value > 0.4) {
 								document.getElementById('icon'+(i+1)).style.visibility = 'visible';
+								document.getElementById("output").innerHTML = er;
 							} else {
 								document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
