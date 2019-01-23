@@ -314,38 +314,38 @@ visibility : hidden;
 			
 				function getAdvice() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
-					advice = data.slip.advice
+					advice = data.slip.advice; 
 					//alert(advice)
 					document.getElementById('advice').innerHTML = advice;
 					});
 				}
 				function getAdvice2() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
-					advice = data.slip.advice
+					advice = data.slip.advice; 
 					//alert(advice)
 					document.getElementById('advice2').innerHTML = advice;
 					});
 				}function getAdvice3() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
-					advice = data.slip.advice
+					advice = data.slip.advice; 
 					//alert(advice)
 					document.getElementById('advice3').innerHTML = advice;
 					});
 				}function getAdvice4() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
-					advice = data.slip.advice
+					advice = data.slip.advice; 
 					//alert(advice)
 					document.getElementById('advice4').innerHTML = advice;
 					});
 				}function getAdvice5() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
-					advice = data.slip.advice
+					advice = data.slip.advice; 
 					//alert(advice)
 					document.getElementById('advice5').innerHTML = advice;
 					});
 				}function getAdvice6() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
-					advice = data.slip.advice
+					advice = data.slip.advice; 
 					//alert(advice)
 					document.getElementById('advice6').innerHTML = advice;
 					});
@@ -440,11 +440,9 @@ visibility : hidden;
 					if (ctrack.getCurrentPosition()) {
 						ctrack.draw(overlay);
 					}
-					var emotionOutput = [], 
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
-					emotionOutput = er; 
-					document.getElementById("output").innerHTML = emotionOutput;
+					document.getElementById("output").innerHTML = er;
 					if (er) {
 						updateData(er);
 						for (var i = 0;i < er.length;i++) {
