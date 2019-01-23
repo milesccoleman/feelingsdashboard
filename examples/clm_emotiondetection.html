@@ -182,6 +182,7 @@ visibility : hidden;
 		</style>
 		<script src="https://www.w3schools.com/lib/w3.js"></script>
 		<script>
+			const emotionOutput = [], 
 			// getUserMedia only works over https in Chrome 47+, so we redirect to https. Also notify user if running from file.
 			if (window.location.protocol == "file:") {
 				alert("You seem to be running this example directly from a file. Note that these examples only work when served from a server or localhost due to canvas cross-domain restrictions.");
@@ -442,12 +443,13 @@ visibility : hidden;
 					}
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
+					emotionOutput = er; 
 					if (er) {
 						updateData(er);
 						for (var i = 0;i < er.length;i++) {
 							if (er[i].value > 0.4) {
 								document.getElementById('icon'+(i+1)).style.visibility = 'visible';
-								document.getElementById("output").innerHTML = er;
+								document.getElementById("output").innerHTML = emotionOutput;
 							} else {
 								document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
