@@ -359,15 +359,23 @@ visibility : hidden;
 				}
 			</script>
 			<script>
-				function showCards() {
+				function showAnger() {
 				document.getElementById('angry').style.visibility = 'visible';
-				document.getElementById('sad').style.visibility = 'visible';
-				document.getElementById('surprised').style.visibility = 'visible';
+				}
+				function showDisgust() {
 				document.getElementById('disgusted').style.visibility = 'visible';
-				document.getElementById('happy').style.visibility = 'visible';
+				}
+				function showFear() {
 				document.getElementById('fearful').style.visibility = 'visible';
-				
-
+				}
+				function showSadness() {
+				document.getElementById('sad').style.visibility = 'visible';
+				}
+				function showSurprise() {
+				document.getElementById('surprised').style.visibility = 'visible';
+				}
+				function showHappiness() {
+				document.getElementById('happy').style.visibility = 'visible';
 				}
 			</script>
 			<script>
@@ -460,21 +468,27 @@ visibility : hidden;
 							}
 							if (er[0].value > 0.4) {								
 								document.getElementById("output").innerHTML = 'angry=' + er[0].value;
+								showAnger(); 
 							}
 							if (er[1].value > 0.4) {
 								document.getElementById("output2").innerHTML = 'disgusted=' + er[1].value;
+								showDisgust(); 
 							}
 							if (er[2].value > 0.4) {
 								document.getElementById("output3").innerHTML = 'fear=' + er[2].value;
+								showFear(); 
 							}
 							if (er[3].value > 0.4) {
 								document.getElementById("output4").innerHTML = 'sad=' + er[3].value;
+								showSadness(); 
 							}
 							if (er[4].value > 0.4) {
 								document.getElementById("output5").innerHTML = 'surprised=' + er[4].value;
+								showSurprise(); 
 							}
 							if (er[5].value > 0.4) {
 								document.getElementById("output6").innerHTML = 'happy=' + er[5].value;
+								showHappiness(); 
 							}
 						}
 					}
