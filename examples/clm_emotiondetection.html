@@ -224,13 +224,6 @@ visibility : hidden;
 					<img class="emotion_icon" id="icon4" src="./media/icon_happy.png">
 				</div>
 				<div id='emotion_chart'></div>
-				<p id="output" ></p>
-				<p id="output2" ></p>
-				<p id="output3" ></p>
-				<p id="output4" ></p>
-				<p id="output5" ></p>
-				<p id="output6" ></p>
-				
 			</div>
 			<div id="controls">
 				<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
@@ -465,27 +458,21 @@ visibility : hidden;
 								document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
 							if (er[0].value > 0.4) {								
-								document.getElementById("output").innerHTML = 'angry=' + er[0].value;
 								showAnger(); 
 							}
 							if (er[1].value > 0.4) {
-								document.getElementById("output2").innerHTML = 'disgusted=' + er[1].value;
 								showDisgust(); 
 							}
 							if (er[2].value > 0.4) {
-								document.getElementById("output3").innerHTML = 'fear=' + er[2].value;
 								showFear(); 
 							}
 							if (er[3].value > 0.4) {
-								document.getElementById("output4").innerHTML = 'sad=' + er[3].value;
 								showSadness(); 
 							}
 							if (er[4].value > 0.4) {
-								document.getElementById("output5").innerHTML = 'surprised=' + er[4].value;
 								showSurprise(); 
 							}
 							if (er[5].value > 0.4) {
-								document.getElementById("output6").innerHTML = 'happy=' + er[5].value;
 								showHappiness(); 
 							}
 						}
