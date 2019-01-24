@@ -224,6 +224,7 @@ visibility : hidden;
 					<img class="emotion_icon" id="icon4" src="./media/icon_happy.png">
 				</div>
 				<div id='emotion_chart'></div>
+				<p id="output" ></p>
 			</div>
 			<div id="controls">
 				<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
@@ -448,6 +449,7 @@ visibility : hidden;
 						for (var i = 0;i < er.length;i++) {
 							if (er[i].value > 0.4) {
 								document.getElementById('icon'+(i+1)).style.visibility = 'visible';
+								document.getElementById("output").innerHTML = er[i].value; 
 							} else {
 								document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
