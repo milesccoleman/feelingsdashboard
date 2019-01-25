@@ -285,7 +285,8 @@ visibility: hidden;
 			</li>
 			</ul>
 			<script>
-			let collectData = false; 
+			let collectData = false;
+			const outputArray = []; 
 			function grabData() {
 			collectData = true; 
 			}
@@ -487,7 +488,8 @@ visibility: hidden;
 							if (er[5].value > 0.4) {
 								showHappiness(); 
 							}
-							console.log(er[i].value);
+							outputArray.push(er);
+							console.log(outputArray); 
 							collectData = false; 
 						}
 						}
