@@ -440,7 +440,7 @@ visibility : hidden;
 					trackingStarted = true;
 					// start loop to draw face
 					drawLoop();
-					let snapData = true; 
+					var snapData = true; 
 				}
 				function drawLoop() {
 					requestAnimFrame(drawLoop);
@@ -451,7 +451,6 @@ visibility : hidden;
 					}
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
-					var snapData = false; 
 					if (er) {
 						updateData(er);
 						for (var i = 0;i < er.length;i++) {
@@ -482,7 +481,7 @@ visibility : hidden;
 								showHappiness(); 
 							}
 							console.log(er[i].value); 
-							let snapData = false; 
+							snapData = false; 
 							}
 							}
 						}
