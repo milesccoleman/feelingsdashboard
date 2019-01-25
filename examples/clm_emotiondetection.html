@@ -285,6 +285,10 @@ visibility: hidden;
 			</li>
 			</ul>
 			<script>
+			let collectData = false; 
+			function grabData() {
+			collectData = true; 
+			}
 			var card1 = document.querySelector('#angry');
 			card1.addEventListener( 'click', function() {
   			card1.classList.toggle('is-flipped');
@@ -464,6 +468,7 @@ visibility: hidden;
 							} else {
 								//document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
+							if (collectData) {
 							if (er[0].value > 0.4) {								
 								showAnger(); 
 							}
@@ -483,7 +488,8 @@ visibility: hidden;
 								showHappiness(); 
 							}
 							console.log(er[i].value);
-							}
+							collectData = false; 
+						}
 						}
 					}
 				var ec = new emotionClassifier();
