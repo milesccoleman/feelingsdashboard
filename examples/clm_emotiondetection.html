@@ -175,7 +175,12 @@ visibility : hidden;
 background: yellow; 
 font-size: 40px;
 visibility : hidden;
-
+}
+#startbutton {
+visibility: visible; 
+}
+#startbutton2 {
+visibility: hidden; 
 }
 
 
@@ -227,6 +232,7 @@ visibility : hidden;
 			</div>
 			<div id="controls">
 				<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
+				<input class="btn" type="button" value="Get Advice Based on Your Emotions" onclick="grabData()" id="startbutton2"></input>
 			</div>
 			<ul id="tarot">
 			<li>
@@ -430,7 +436,6 @@ visibility : hidden;
 				var ctrack = new clm.tracker({useWebGL : true});
 				ctrack.init(pModel);
 				var trackingStarted = false;
-				let snapData = true; 
 				function startVideo() {
 					// start video
 					vid.play();
@@ -439,6 +444,8 @@ visibility : hidden;
 					trackingStarted = true;
 					// start loop to draw face
 					drawLoop();
+					document.getElementById('startbutton').style.visibility = 'hidden';
+					document.getElementById('startbutton2').style.visibility = 'visible';
 				}
 				function drawLoop() {
 					requestAnimFrame(drawLoop);
@@ -449,6 +456,7 @@ visibility : hidden;
 					}
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
+					let snapData = true; 
 					if (er) {
 						updateData(er);
 						for (var i = 0;i < er.length;i++) {
@@ -457,9 +465,9 @@ visibility : hidden;
 							} else {
 								document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
-							if (snapData = true) {
+							
 							function grabData() {
-				
+							if (snapData = true) {
 							if (er[0].value > 0.4) {								
 								showAnger(); 
 							}
