@@ -454,6 +454,9 @@ visibility: hidden;
 					if (ctrack.getCurrentPosition()) {
 						ctrack.draw(overlay);
 					}
+					function grabData() {
+						let snapData = false; 
+					}
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
 					if (er) {
@@ -464,9 +467,6 @@ visibility: hidden;
 							} else {
 								document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
-							
-							function grabData() {
-							let snapData = false; 
 							if (snapData = false){
 							if (er[0].value > 0.4) {								
 								showAnger(); 
@@ -490,7 +490,6 @@ visibility: hidden;
 							snapData = true; 
 							}
 						}
-					}	
 					}
 				}
 				var ec = new emotionClassifier();
