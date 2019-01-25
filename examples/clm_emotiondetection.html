@@ -380,7 +380,6 @@ visibility : hidden;
 					var startbutton = document.getElementById('startbutton');
 					startbutton.value = "Get Advice Based on Your Emotions";
 					startbutton.disabled = null;
-					snapData = true; 
 				}
 				function adjustVideoProportions() {
 					// resize overlay and video if proportions are different
@@ -431,7 +430,7 @@ visibility : hidden;
 				var ctrack = new clm.tracker({useWebGL : true});
 				ctrack.init(pModel);
 				var trackingStarted = false;
-				var snapData = false; 
+				let snapData = true; 
 				function startVideo() {
 					// start video
 					vid.play();
@@ -440,7 +439,6 @@ visibility : hidden;
 					trackingStarted = true;
 					// start loop to draw face
 					drawLoop();
-					var snapData = true; 
 				}
 				function drawLoop() {
 					requestAnimFrame(drawLoop);
