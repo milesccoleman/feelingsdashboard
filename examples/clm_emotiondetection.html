@@ -378,8 +378,9 @@ visibility : hidden;
 				/********** check and set up video/webcam **********/
 				function enablestart() {
 					var startbutton = document.getElementById('startbutton');
-					startbutton.value = "start";
+					startbutton.value = "Get Advice Based on Your Emotions";
 					startbutton.disabled = null;
+					snapData = true; 
 				}
 				function adjustVideoProportions() {
 					// resize overlay and video if proportions are different
@@ -430,6 +431,7 @@ visibility : hidden;
 				var ctrack = new clm.tracker({useWebGL : true});
 				ctrack.init(pModel);
 				var trackingStarted = false;
+				var snapData = false; 
 				function startVideo() {
 					// start video
 					vid.play();
@@ -438,6 +440,7 @@ visibility : hidden;
 					trackingStarted = true;
 					// start loop to draw face
 					drawLoop();
+					let snapData = true; 
 				}
 				function drawLoop() {
 					requestAnimFrame(drawLoop);
@@ -448,7 +451,7 @@ visibility : hidden;
 					}
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
-					console.log(er); 
+					var snapData = false; 
 					if (er) {
 						updateData(er);
 						for (var i = 0;i < er.length;i++) {
@@ -456,7 +459,10 @@ visibility : hidden;
 								document.getElementById('icon'+(i+1)).style.visibility = 'visible';
 							} else {
 								document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
-							}
+								)
+							if (snapData = true) {
+							function grabData() {
+				
 							if (er[0].value > 0.4) {								
 								showAnger(); 
 							}
@@ -474,6 +480,10 @@ visibility : hidden;
 							}
 							if (er[5].value > 0.4) {
 								showHappiness(); 
+							}
+							console.log(er[i].value); 
+							let snapData = false; 
+							}
 							}
 						}
 					}
