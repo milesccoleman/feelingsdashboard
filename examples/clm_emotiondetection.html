@@ -466,6 +466,8 @@ visibility: hidden;
 							}
 							
 							function grabData() {
+							let snapData = false; 
+							if (snapData = false){
 							if (er[0].value > 0.4) {								
 								showAnger(); 
 							}
@@ -484,9 +486,11 @@ visibility: hidden;
 							if (er[5].value > 0.4) {
 								showHappiness(); 
 							}
-							console.log(er[i].value); 
+							console.log(er[i].value);
+							snapData = true; 
 							}
 						}
+					}	
 					}
 				}
 				var ec = new emotionClassifier();
