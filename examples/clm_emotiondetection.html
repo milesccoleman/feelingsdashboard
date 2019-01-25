@@ -454,9 +454,6 @@ visibility: hidden;
 					if (ctrack.getCurrentPosition()) {
 						ctrack.draw(overlay);
 					}
-					function grabData() {
-						let snapData = false; 
-					}
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
 					if (er) {
@@ -467,7 +464,7 @@ visibility: hidden;
 							} else {
 								document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
-							if (snapData = false){
+							function grabData() {
 							if (er[0].value > 0.4) {								
 								showAnger(); 
 							}
@@ -487,8 +484,8 @@ visibility: hidden;
 								showHappiness(); 
 							}
 							console.log(er[i].value);
-							snapData = true; 
 							}
+						}
 						}
 					}
 				}
