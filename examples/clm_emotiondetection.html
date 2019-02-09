@@ -317,7 +317,6 @@ var utcDate = dt.toUTCString();
       "resource": {
         "values": [
           [
-          	"test",
             utcDate,
             outputArray[0].value,
             outputArray[1].value,
@@ -550,6 +549,7 @@ var utcDate = dt.toUTCString();
 							console.log(outputArray); 
 							collectData = false;
 							authenticate().then(loadClient); 
+							execute(); 
 						}
 						}
 					}
