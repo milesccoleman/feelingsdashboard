@@ -188,8 +188,9 @@ visibility: visible;
 visibility: hidden; 
 }
 #resetbutton {
+color: white; 
 visibility: hidden; 
-background: red; 
+background: orange; 
 }
 
 
@@ -435,12 +436,12 @@ var utcDate = dt.toUTCString();
 					});
 				}
 				function reset() {
-				card1.classList.toggle('is-unflipped');
-				card2.classList.toggle('is-unflipped');
-				card3.classList.toggle('is-unflipped');
-				card4.classList.toggle('is-unflipped');
-				card5.classList.toggle('is-unflipped');
-				card6.classList.toggle('is-unflipped');
+				document.getElementById('angry').style.visibility = 'hidden';
+				document.getElementById('disgusted').style.visibility = 'hidden';
+				document.getElementById('fearful').style.visibility = 'hidden';
+				document.getElementById('sad').style.visibility = 'hidden';
+				document.getElementById('surprised').style.visibility = 'hidden';
+				document.getElementById('happy').style.visibility = 'hidden';
 				}
 			</script>
 			<script>
