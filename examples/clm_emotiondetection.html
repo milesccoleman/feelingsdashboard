@@ -102,6 +102,10 @@
   transform: translateX(-100%) rotateY(-180deg);
 }
 
+.card.is-unflipped {
+  transform: translateX(100%) rotateY(180deg);
+}
+
 .card__face {
   position: absolute;
   width: 100%;
@@ -183,6 +187,10 @@ visibility: visible;
 #startbutton2 {
 visibility: hidden; 
 }
+#resetbutton {
+visibility: hidden; 
+background: red; 
+}
 
 
 		</style>
@@ -234,6 +242,7 @@ visibility: hidden;
 			<div id="controls">
 				<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
 				<input class="btn" type="button" value="Get Advice Based on Your Emotions" onclick="grabData()" id="startbutton2"></input>
+				<input class="btn" type="button" value="Reset" onclick="reset()" id="resetbutton"></input>
 			</div>
 			<ul id="tarot">
 			<li>
@@ -353,7 +362,8 @@ var utcDate = dt.toUTCString();
 			const surpriseData = ""; 
 			const happinessData = ""; 
 			function grabData() {
-			collectData = true; 
+			collectData = true;
+			document.getElementById('resetbutton').style.visibility = 'visible'; 
 			}
 			var card1 = document.querySelector('#angry');
 			card1.addEventListener( 'click', function() {
@@ -423,6 +433,14 @@ var utcDate = dt.toUTCString();
 					//alert(advice)
 					document.getElementById('advice6').innerHTML = advice;
 					});
+				}
+				function reset() {
+				card1.classList.toggle('is-unflipped');
+				card2.classList.toggle('is-unflipped');
+				card3.classList.toggle('is-unflipped');
+				card4.classList.toggle('is-unflipped');
+				card5.classList.toggle('is-unflipped');
+				card6.classList.toggle('is-unflipped');
 				}
 			</script>
 			<script>
