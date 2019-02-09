@@ -381,32 +381,38 @@ var utcDate = dt.toUTCString();
 			card1.addEventListener( 'click', function() {
   			card1.classList.toggle('is-flipped');
   			getAdvice();
+  			angerFlipped = true;
 			});
 			var card2 = document.querySelector('#sad');
 			card2.addEventListener( 'click', function() {
   			card2.classList.toggle('is-flipped');
   			getAdvice2(); 
+  			sadnessFlipped = true;
 			});
 			var card3 = document.querySelector('#surprised');
 			card3.addEventListener( 'click', function() {
 			card3.classList.toggle('is-flipped');
-  			getAdvice3();  
+  			getAdvice3(); 
+  			surpriseFlipped = true; 
 			});
 			
 			var card4 = document.querySelector('#disgusted');
 			card4.addEventListener( 'click', function() {
   			card4.classList.toggle('is-flipped');
-  			getAdvice4();  
+  			getAdvice4(); 
+  			disgustFlipped = true; 
 			});
 			var card5 = document.querySelector('#happy');
 			card5.addEventListener( 'click', function() {
   			card5.classList.toggle('is-flipped');
-  			getAdvice5();  
+  			getAdvice5();
+  			happinessFlipped = true;  
 			});
 			var card6 = document.querySelector('#fearful');
 			card6.addEventListener( 'click', function() {
   			card6.classList.toggle('is-flipped');
-  			getAdvice6();  
+  			getAdvice6();
+  			fearFlipped = true;  
 			});
 			
 				function getAdvice() {
@@ -414,43 +420,37 @@ var utcDate = dt.toUTCString();
 					advice = data.slip.advice; 
 					//alert(advice)
 					document.getElementById('advice').innerHTML = advice;
-					angerFlipped = true; 
 					});
 				}
 				function getAdvice2() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
 					advice = data.slip.advice; 
 					//alert(advice)
-					document.getElementById('advice2').innerHTML = advice;
-					sadnessFlipped = true; 
+					document.getElementById('advice2').innerHTML = advice; 
 					});
 				}function getAdvice3() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
 					advice = data.slip.advice; 
 					//alert(advice)
 					document.getElementById('advice3').innerHTML = advice;
-					surpriseFlipped = true;
 					});
 				}function getAdvice4() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
 					advice = data.slip.advice; 
 					//alert(advice)
 					document.getElementById('advice4').innerHTML = advice;
-					disgustFlipped = true;
 					});
 				}function getAdvice5() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
 					advice = data.slip.advice; 
 					//alert(advice)
 					document.getElementById('advice5').innerHTML = advice;
-					happinessFlipped = true;
 					});
 				}function getAdvice6() {
 					w3.getHttpObject("https://api.adviceslip.com/advice", function(data){
 					advice = data.slip.advice; 
 					//alert(advice)
 					document.getElementById('advice6').innerHTML = advice;
-					fearFlipped = true;
 					});
 				}
 				function reset() {
