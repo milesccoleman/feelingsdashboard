@@ -454,34 +454,34 @@ var utcDate = dt.toUTCString();
 					});
 				}
 				function reset() {
+					document.getElementById('angry').style.visibility = 'hidden';
+					document.getElementById('sad').style.visibility = 'hidden';
+					document.getElementById('surprised').style.visibility = 'hidden';
+					document.getElementById('disgusted').style.visibility = 'hidden';
+					document.getElementById('happy').style.visibility = 'hidden';
+					document.getElementById('fearful').style.visibility = 'hidden';
 				if (angerFlipped) {
 					card1.classList.toggle('is-flipped');
-					document.getElementById('angry').style.visibility = 'hidden';
 					angerFlipped = false; 
 				}
 				if (sadnessFlipped) {
 					card2.classList.toggle('is-flipped');
-					document.getElementById('sad').style.visibility = 'hidden';
 					sadnessFlipped = false; 
 				}
 				if (surpriseFlipped) {
 					card3.classList.toggle('is-flipped');
-					document.getElementById('surprised').style.visibility = 'hidden';
 					surpriseFlipped = false; 
 				}
 				if (disgustFlipped) {
 					card4.classList.toggle('is-flipped');
-					document.getElementById('disgusted').style.visibility = 'hidden';
 					disgustFlipped = false; 
 				}
 				if (happinessFlipped) {
 					card5.classList.toggle('is-flipped');
-					document.getElementById('happy').style.visibility = 'hidden';
 					happinessFlipped = false; 
 				}
 				if (fearFlipped) {
 					card6.classList.toggle('is-flipped');
-					document.getElementById('fearful').style.visibility = 'hidden';
 					fearFlipped = false; 
 				}
 			}
