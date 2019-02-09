@@ -538,31 +538,31 @@ var utcDate = dt.toUTCString();
 							if (collectData) {
 							if (er[0].value > 0.4) {								
 								showAnger(); 
+								angerData = er[0].value; 
 							}
 							if (er[1].value > 0.4) {
 								showDisgust(); 
+								disgustData = er[1].value; 
 							}
 							if (er[2].value > 0.4) {
 								showFear(); 
+								fearData =er[2].value; 
 							}
 							if (er[3].value > 0.4) {
 								showSadness(); 
+								sadData = er[3].value; 
 							}
 							if (er[4].value > 0.4) {
-								showSurprise(); 
+								showSurprise();
+								surpriseData = er[4].value; 
 							}
 							if (er[5].value > 0.4) {
 								showHappiness(); 
+								happinessData = er[5].value
 							}
 							outputArray.push(er);
 							console.log(outputArray);
 							collectData = false;
-							angerData = outputArray[0].value; 
-							disgustData = outputArray[1].value; 
-							fearData = outputArray[2].value; 
-							sadnessData = outputArray[3].value; 
-							surpriseData = outputArray[4].value
-							happinessData = outputArray[5].value; 
 							execute(); 
 						}
 						}
