@@ -4,6 +4,7 @@
 		<title>Feelings Dashboard</title>
 		<meta charset="utf-8">
 		<link href="./styles/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<script src="https://apis.google.com/js/api.js"></script>
 		<style>
 			@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 			body {
@@ -284,7 +285,6 @@ visibility: hidden;
 			</div>
 			</li>
 			</ul>
-<script src="https://apis.google.com/js/api.js"></script>
 <script>
   /**
    * Sample JavaScript code for sheets.spreadsheets.values.append
@@ -544,9 +544,10 @@ visibility: hidden;
 							}
 							outputArray.push(er);
 							console.log(outputArray); 
-							collectData = false; 
 							authenticate().then(loadClient); 
 							execute(); 
+							collectData = false; 
+
 						}
 						}
 					}
