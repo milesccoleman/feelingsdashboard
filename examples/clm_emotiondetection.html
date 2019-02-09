@@ -535,9 +535,10 @@ var utcDate = dt.toUTCString();
 								//document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
 							if (collectData) {
+							this.angerData = er[0].value; 
+
 							if (er[0].value > 0.4) {								
 								showAnger(); 
-								this.angerData = 'anger data'; 
 							}
 							if (er[1].value > 0.4) {
 								showDisgust(); 
