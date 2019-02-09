@@ -366,7 +366,13 @@ var utcDate = dt.toUTCString();
 			const fearData = ""; 
 			const sadnessData = "";
 			const surpriseData = ""; 
-			const happinessData = ""; 
+			const happinessData = "";
+			let angerFlipped = false; 
+			let disgustFlipped = false;
+			let fearFlipped = false;
+			let sadnessFlipped = false;
+			let surpriseFlipped = false;
+			let happinessFlipped = false;
 			function grabData() {
 			collectData = true;
 			document.getElementById('resetbutton').style.visibility = 'visible'; 
@@ -374,32 +380,38 @@ var utcDate = dt.toUTCString();
 			var card1 = document.querySelector('#angry');
 			card1.addEventListener( 'click', function() {
   			card1.classList.toggle('is-flipped');
-  			getAdvice(); 
+  			getAdvice();
+  			angerFlipped = true; 
 			});
 			var card2 = document.querySelector('#sad');
 			card2.addEventListener( 'click', function() {
   			card2.classList.toggle('is-flipped');
   			getAdvice2(); 
+  			sadnessFlipped = true; 
 			});
 			var card3 = document.querySelector('#surprised');
 			card3.addEventListener( 'click', function() {
-  			card3.classList.toggle('is-flipped');
   			getAdvice3(); 
+  			surpriseFlipped = true; 
 			});
+			
 			var card4 = document.querySelector('#disgusted');
 			card4.addEventListener( 'click', function() {
   			card4.classList.toggle('is-flipped');
   			getAdvice4(); 
+  			disgustFlipped = true; 
 			});
 			var card5 = document.querySelector('#happy');
 			card5.addEventListener( 'click', function() {
   			card5.classList.toggle('is-flipped');
-  			getAdvice5(); 
+  			getAdvice5();
+  			happinessFlipped = true;  
 			});
 			var card6 = document.querySelector('#fearful');
 			card6.addEventListener( 'click', function() {
   			card6.classList.toggle('is-flipped');
   			getAdvice6(); 
+  			fearFlipped = true; 
 			});
 			
 				function getAdvice() {
@@ -441,13 +453,31 @@ var utcDate = dt.toUTCString();
 					});
 				}
 				function reset() {
-				document.getElementById('angry').style.visibility = 'hidden';
-				document.getElementById('disgusted').style.visibility = 'hidden';
-				document.getElementById('fearful').style.visibility = 'hidden';
-				document.getElementById('sad').style.visibility = 'hidden';
-				document.getElementById('surprised').style.visibility = 'hidden';
-				document.getElementById('happy').style.visibility = 'hidden';
+				if (angerFlipped = true) {
+					document.getElementById('angry').style.visibility = 'hidden';
+					card1.classList.toggle('is-flipped');
 				}
+				if (sadnessFlipped = true) {
+					document.getElementById('sad').style.visibility = 'hidden';
+					card2.classList.toggle('is-flipped');
+				}
+				if (surpriseFlipped = true) {
+					document.getElementById('surprised').style.visibility = 'hidden';
+					card3.classList.toggle('is-flipped');
+				}
+				if (disgustFlipped = true) {
+					document.getElementById('disgusted').style.visibility = 'hidden';
+					card4.classList.toggle('is-flipped');
+				}
+				if (happinessFlipped = true) {
+					document.getElementById('happy').style.visibility = 'hidden';
+					card5.classList.toggle('is-flipped');
+				}
+				if (fearFlipped = true) {
+					document.getElementById('fearful').style.visibility = 'hidden';
+					card6.classList.toggle('is-flipped');
+				}
+			}
 			</script>
 			<script>
 				function showAnger() {
