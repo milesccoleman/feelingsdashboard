@@ -288,6 +288,7 @@ visibility: hidden;
 <script>
 var dt = new Date();
 var utcDate = dt.toUTCString();
+let authenticated = false; 
   /**
    * Sample JavaScript code for sheets.spreadsheets.values.append
    * See instructions for running APIs Explorer code samples locally:
@@ -299,6 +300,7 @@ var utcDate = dt.toUTCString();
         .signIn({scope: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets"})
         .then(function() { console.log("Sign-in successful"); },
               function(err) { console.error("Error signing in", err); });
+              authenticated = true; 
   }
   function loadClient() {
     return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/sheets/v4/rest")
@@ -546,9 +548,15 @@ var utcDate = dt.toUTCString();
 							}
 							outputArray.push(er);
 							console.log(outputArray); 
+							collectData = false; 
+							if (authenticated = true){
+							loadClient(); 
+							execute(); 
+							}
+							else{
 							authenticate().then(loadClient); 
 							execute();
-							collectData = false;  
+							} 
 						}
 						}
 					}
