@@ -309,7 +309,7 @@ let authenticated = false;
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function execute() {
-    return gapi.client.sheets.spreadsheets.values.append({
+    return gapi.client.sheets.values.append({
       "spreadsheetId": "1mDnAsTPJ7z_fvpDUBT_jvlH9EqYKzolOunG-Oeu6yp0",
       "range": "Sheet1!A1:G5",
       "includeValuesInResponse": true,
