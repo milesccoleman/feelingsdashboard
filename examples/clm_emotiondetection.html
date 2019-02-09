@@ -537,27 +537,27 @@ var utcDate = dt.toUTCString();
 							if (collectData) {
 							if (er[0].value > 0.4) {								
 								showAnger(); 
-								angerData = 'anger data'; 
+								this.angerData = 'anger data'; 
 							}
 							if (er[1].value > 0.4) {
 								showDisgust(); 
-								disgustData = 'disgust data'; 
+								this.disgustData = 'disgust data'; 
 							}
 							if (er[2].value > 0.4) {
 								showFear(); 
-								fearData = 'fear data'; 
+								this.fearData = 'fear data'; 
 							}
 							if (er[3].value > 0.4) {
 								showSadness(); 
-								sadData = 'sad data'; 
+								this.sadData = 'sad data'; 
 							}
 							if (er[4].value > 0.4) {
 								showSurprise();
-								surpriseData = 'surprise data'; 
+								this.surpriseData = 'surprise data'; 
 							}
 							if (er[5].value > 0.4) {
 								showHappiness(); 
-								happinessData = 'happiness data'; 
+								this.happinessData = 'happiness data'; 
 							}
 							outputArray.push(er);
 							console.log(outputArray);
