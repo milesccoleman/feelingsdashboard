@@ -116,17 +116,17 @@
   font-weight: bold;
   backface-visibility: hidden;
 }
-.card__face p{
-  position: absolute;
-  color: white;
-  }
 .card__face--front {
   background: red;
   font-size: 40px;
   border-radius: 15px; 
 
 }
-
+.click {
+	line-height: 12px; 
+	color: white; 
+	text-align: center; 
+}
 .card__face--back {
   background: rgba(0, 0, 0, 0.6); 
   transform: rotateY(180deg);
@@ -252,7 +252,7 @@ background: orange;
 			<li>
 			<div class="scene">
   			<div id="angry" class="card">
-    			<div class="card__face">Anger<p>Click</p></div>
+    			<div class="card__face">Anger<p class="click">Click me</p></div>
    				<div class="card__face card__face--back"><p id="advice"></p></div>
   			</div>
 			</div>
@@ -260,7 +260,7 @@ background: orange;
 			<li>
 			<div class="scene">
   			<div id="sad" class="card">
-    			<div class="card__face">Sadness<p>Click</p></div>
+    			<div class="card__face">Sadness<p class="click">Click me</p></div>
    				<div class="card__face card__face--back"><p id="advice2"></p></div>
   			</div>
 			</div>
@@ -268,7 +268,7 @@ background: orange;
 			<li>
 			<div class="scene">
   			<div id="surprised" class="card">
-    			<div class="card__face">Surprise<p>Click</p></div>
+    			<div class="card__face">Surprise<p class="click">Click me</p></div>
    				<div class="card__face card__face--back"><p id="advice3"></p></div>
   			</div>
 			</div>
@@ -276,7 +276,7 @@ background: orange;
 			<li>
 			<div class="scene">
   			<div id="disgusted" class="card">
-    			<div class="card__face">Disgust<p>Click</p></div>
+    			<div class="card__face">Disgust<p class="click">Click me</p></div>
    				<div class="card__face card__face--back"><p id="advice4"></p></div>
   			</div>
 			</div>
@@ -284,7 +284,7 @@ background: orange;
 			<li>
 			<div class="scene">
   			<div id="happy" class="card">
-    			<div class="card__face">Happiness<p>Click</p></div>
+    			<div class="card__face">Happiness<p class="click">Click me</p></div>
    				<div class="card__face card__face--back"><p id="advice5"></p></div>
   			</div>
 			</div>
@@ -292,7 +292,7 @@ background: orange;
 			<li>
 			<div class="scene">
   			<div id="fearful" class="card">
-    			<div class="card__face">Fear<p>Click</p></div>
+    			<div class="card__face">Fear<p class="click">Click me</p></div>
    				<div class="card__face card__face--back"><p id="advice6"></p></div>
   			</div>
 			</div>
