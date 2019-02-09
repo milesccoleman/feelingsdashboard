@@ -535,12 +535,12 @@ var utcDate = dt.toUTCString();
 								//document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
 							if (collectData) {
-								this.angerData = er[0].value; 
-								this.disgustData = er[1].value; 
-								this.fearData = er[2].value; 
-								this.sadnessData = er[3].value;
-								this.surpriseData = er[4].value;
-								this.happinessData = er[5].value;
+								this.angerData = er[0].value * 100; 
+								this.disgustData = er[1].value * 100; 
+								this.fearData = er[2].value * 100; 
+								this.sadnessData = er[3].value * 100;
+								this.surpriseData = er[4].value * 100;
+								this.happinessData = er[5].value * 100;
 							if (er[0].value > 0.4) {								
 								showAnger(); 
 							}
