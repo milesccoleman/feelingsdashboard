@@ -298,9 +298,9 @@ let authenticated = false;
   function authenticate() {
     return gapi.auth2.getAuthInstance()
         .signIn({scope: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets"})
-        .then(function() { console.log("Sign-in successful"); },
+        .then(function() { console.log("Sign-in successful"); authenticated = true;},
               function(err) { console.error("Error signing in", err); });
-              authenticated = true; 
+               
   }
   function loadClient() {
     return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/sheets/v4/rest")
