@@ -318,12 +318,14 @@ var utcDate = dt.toUTCString();
         "values": [
           [
             utcDate,
-            outputArray[0].value,
-            outputArray[1].value,
-            outputArray[2].value,
-            outputArray[3].value,
-            outputArray[4].value,
-            outputArray[5].value,
+            outputArray,
+			angerData, 
+			disgustData, 
+			fearData,
+			sadnessData,
+			surpriseData,
+			happinessData
+
           ]
         ]
       }
@@ -344,6 +346,12 @@ var utcDate = dt.toUTCString();
 			<script>
 			let collectData = false;
 			const outputArray = []; 
+			const angerData = ""; 
+			const disgustData = ""; 
+			const fearData = ""; 
+			const sadnessData = "";
+			const surpriseData = "": 
+			const happinessData = ""; 
 			function grabData() {
 			collectData = true; 
 			}
@@ -547,10 +555,15 @@ var utcDate = dt.toUTCString();
 								showHappiness(); 
 							}
 							outputArray.push(er);
-							console.log(outputArray); 
+							console.log(outputArray);
+							angerData = outputArray[0].value; 
+							disgustData = outputArray[1].value; 
+							fearData = outputArray[2].value; 
+							sadnessData = outputArray[3].value; 
+							surpriseData = outputArray[4].value
+							happinessData = outputArray[5].value;  
 							execute(); 
 							collectData = false;
-							
 						}
 						}
 					}
