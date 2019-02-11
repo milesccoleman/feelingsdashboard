@@ -205,9 +205,11 @@ visibility : hidden;
 }
 #startbutton {
 visibility: visible; 
+background: lightgreen; 
 }
 #startbutton2 {
-visibility: hidden; 
+visibility: hidden;
+background: purple; 
 }
 #resetbutton {
 color: white; 
@@ -261,11 +263,11 @@ background: orange;
 					<img class="emotion_icon" id="icon4" src="./media/icon_happy.png">
 				</div>
 				<div id='emotion_chart'></div>
-			</div>
-			<div id="controls">
+				<div id="controls">
 				<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
 				<input class="btn" type="button" value="Get Advice Based on Your Emotions" onclick="grabData()" id="startbutton2"></input>
 				<input class="btn" type="button" value="Reset" onclick="reset()" id="resetbutton"></input>
+			</div>
 			</div>
 			<ul id="tarot">
 			<li>
