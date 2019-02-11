@@ -1,4 +1,4 @@
-#Feelings Dashboard
+# Feelings Dashboard
 
 ## Check in With Your Feelings and Get some Advice
 
